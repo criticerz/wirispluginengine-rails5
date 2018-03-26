@@ -19,7 +19,7 @@ require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
 require('com/wiris/plugin/api/PluginBuilder.rb')
 
   class PluginBuilderImpl
-    extend PluginBuilder
+    extend WirisPlugin::PluginBuilder
 
     include Wiris
 
