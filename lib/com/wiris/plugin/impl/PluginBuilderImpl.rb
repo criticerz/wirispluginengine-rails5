@@ -18,8 +18,6 @@ require('com/wiris/plugin/impl/ConfigurationImpl.rb')
 require('com/wiris/plugin/impl/TextServiceImpl.rb')
 require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
 
-require('com/wiris/plugin/api/PluginBuilder.rb')
-
   class PluginBuilderImpl < PluginBuilder
   include Wiris
 
