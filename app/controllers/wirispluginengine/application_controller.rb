@@ -7,9 +7,7 @@ require_dependency "wirispluginengine/integration/test"
 require_dependency "wirispluginengine/integration/cleancache"
 require_dependency "wirispluginengine/integration/resource"
 require_dependency "wirispluginengine/integration/configurationjson"
-# require_dependency "com/wiris/plugin/api/PluginBuilder"
-# require_dependency "com/wiris/plugin/impl/PluginBuilderImpl"
-require "com/wiris/plugin/impl/PluginBuilderImpl"
+require_dependency "com/wiris/plugin/api/PluginBuilder"
 
 
 module Wirispluginengine
