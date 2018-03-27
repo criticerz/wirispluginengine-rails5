@@ -13,6 +13,9 @@ require('com/wiris/plugin/impl/PluginBuilderImpl.rb')
     end
     def initialize()
       super()
+
+      puts "INITIALIZE in PluginBuilder"
+
     end
     def self.getInstance()
       if PluginBuilder::pb==nil

@@ -2,6 +2,7 @@ module WirisPlugin
 include  Wiris
 require('com/wiris/plugin/api/ConfigurationKeys.rb')
 require('com/wiris/plugin/api/PluginBuilder.rb')
+
 require('com/wiris/plugin/impl/FolderTreeStorageAndCache.rb')
 require('com/wiris/plugin/impl/TestImpl.rb')
 require('com/wiris/plugin/impl/ServiceResourceLoaderImpl.rb')
@@ -16,7 +17,9 @@ require('com/wiris/plugin/impl/CasImpl.rb')
 require('com/wiris/plugin/impl/ConfigurationImpl.rb')
 require('com/wiris/plugin/impl/TextServiceImpl.rb')
 require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
+
 require('com/wiris/plugin/api/PluginBuilder.rb')
+
   class PluginBuilderImpl < PluginBuilder
   include Wiris
 
@@ -32,6 +35,9 @@ require('com/wiris/plugin/api/PluginBuilder.rb')
       ci = ConfigurationImpl.new()
       @configuration = ci
       ci::setPluginBuilderImpl(self)
+
+      puts "INITIALIZE in PluginBuilderImpl"
+
     end
     def addConfigurationUpdater(conf)
       @updaterChain::push(conf)
