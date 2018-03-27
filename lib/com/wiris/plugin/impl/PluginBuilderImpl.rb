@@ -16,9 +16,9 @@ require('com/wiris/plugin/impl/CasImpl.rb')
 require('com/wiris/plugin/impl/ConfigurationImpl.rb')
 require('com/wiris/plugin/impl/TextServiceImpl.rb')
 require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
-require('com/wiris/plugin/api/PluginBuilder.rb')
+# require('com/wiris/plugin/api/PluginBuilder.rb')
 
-  class PluginBuilderImpl < PluginBuilder
+  class PluginBuilderImpl # < PluginBuilder
     include Wiris
 
     attr_accessor :configuration
@@ -250,5 +250,24 @@ require('com/wiris/plugin/api/PluginBuilder.rb')
     def newGenericParamsProvider(properties)
       return GenericParamsProviderImpl.new(properties)
     end
+  end
+
+  @@pb = nil
+
+  def self.pb
+    @@pb
+  end
+
+  def self.pb=(pb)
+    @@pb = pb
+  end
+
+  def self.getInstance()
+    if @pb == nil
+      @pb = PluginBuilderImpl.new()
+    end
+    return @pb
+  end
+    
   end
 end
