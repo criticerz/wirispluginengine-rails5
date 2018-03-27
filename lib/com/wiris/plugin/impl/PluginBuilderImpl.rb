@@ -1,21 +1,21 @@
 module WirisPlugin
-include  Wiris
-require('com/wiris/plugin/api/ConfigurationKeys.rb')
-require('com/wiris/plugin/api/PluginBuilder.rb')
-require('com/wiris/plugin/impl/FolderTreeStorageAndCache.rb')
-require('com/wiris/plugin/impl/TestImpl.rb')
-require('com/wiris/plugin/impl/ServiceResourceLoaderImpl.rb')
-require('com/wiris/plugin/impl/ImageFormatControllerPng.rb')
-require('com/wiris/plugin/impl/CleanCacheImpl.rb')
-require('com/wiris/plugin/impl/EditorImpl.rb')
-require('com/wiris/plugin/impl/RenderImpl.rb')
-require('com/wiris/plugin/impl/DefaultConfigurationUpdater.rb')
-require('com/wiris/plugin/impl/FileStorageAndCache.rb')
-require('com/wiris/plugin/impl/ImageFormatControllerSvg.rb')
-require('com/wiris/plugin/impl/CasImpl.rb')
-require('com/wiris/plugin/impl/ConfigurationImpl.rb')
-require('com/wiris/plugin/impl/TextServiceImpl.rb')
-require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
+  include  Wiris
+  require('com/wiris/plugin/api/ConfigurationKeys.rb')
+  require('com/wiris/plugin/api/PluginBuilder.rb')
+  require('com/wiris/plugin/impl/FolderTreeStorageAndCache.rb')
+  require('com/wiris/plugin/impl/TestImpl.rb')
+  require('com/wiris/plugin/impl/ServiceResourceLoaderImpl.rb')
+  require('com/wiris/plugin/impl/ImageFormatControllerPng.rb')
+  require('com/wiris/plugin/impl/CleanCacheImpl.rb')
+  require('com/wiris/plugin/impl/EditorImpl.rb')
+  require('com/wiris/plugin/impl/RenderImpl.rb')
+  require('com/wiris/plugin/impl/DefaultConfigurationUpdater.rb')
+  require('com/wiris/plugin/impl/FileStorageAndCache.rb')
+  require('com/wiris/plugin/impl/ImageFormatControllerSvg.rb')
+  require('com/wiris/plugin/impl/CasImpl.rb')
+  require('com/wiris/plugin/impl/ConfigurationImpl.rb')
+  require('com/wiris/plugin/impl/TextServiceImpl.rb')
+  require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
 # require('com/wiris/plugin/api/PluginBuilder.rb')
 
   class PluginBuilderImpl # < PluginBuilder
@@ -207,11 +207,11 @@ require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
       saveMode = getConfiguration()::getProperty(ConfigurationKeys::SAVE_MODE,"xml")
       externalPlugin = getConfiguration()::getProperty(ConfigurationKeys::EXTERNAL_PLUGIN,"false")
       begin
-      version = Storage::newResourceStorage("VERSION")::read()
+        version = Storage::newResourceStorage("VERSION")::read()
       end
       begin
-      tech = StringTools::replace(Storage::newResourceStorage("tech.txt")::read(),"\n","")
-      tech = StringTools::replace(tech,"\r","")
+        tech = StringTools::replace(Storage::newResourceStorage("tech.txt")::read(),"\n","")
+        tech = StringTools::replace(tech,"\r","")
       end
       if url::indexOf("?")!=-1
         return (((((((url+"&stats-mode=")+saveMode)+"&stats-version=")+version)+"&stats-scriptlang=")+tech)+"&external=")+externalPlugin
@@ -268,6 +268,5 @@ require('com/wiris/plugin/impl/GenericParamsProviderImpl.rb')
     end
     return @pb
   end
-    
-  end
+
 end
